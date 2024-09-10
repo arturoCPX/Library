@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Testing JavaScript
   console.log('JavaScript is working!');
-  fetchTasks();
+  fetchBooks();
   document.getElementById('task-result').style.display = 'none';
 
   // Search key type event
@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => response.text())
       .then(response => {
-        const tasks = JSON.parse(response);
+        const books = JSON.parse(response);
         let template = '';
-        tasks.forEach(task => {
-          template += `<li><a href="#" class="task-item">${task.name}</a></li>`;
+        books.forEach(book => {
+          template += `<li><a href="#" class="task-item">${book.name}</a></li>`;
         });
         document.getElementById('task-result').style.display = 'block';
         document.getElementById('container').innerHTML = template;
@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const postData = {
       name: document.getElementById('name').value,
       description: document.getElementById('description').value,
+      author: document.getElementById('author').value,
+      published_date: document.getElementById('published_date').value,
       id: document.getElementById('taskId').value
     };
     const url = edit === false ? 'task-add.php' : 'task-edit.php';
@@ -53,25 +55,27 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => {
       console.log(response);
       document.getElementById('task-form').reset();
-      fetchTasks();
+      fetchBooks();
     });
   });
 
-  // Fetching Tasks
-  function fetchTasks() {
+  // Fetching Books
+  function fetchBooks() {
     fetch('tasks-list.php')
       .then(response => response.text())
       .then(response => {
-        const tasks = JSON.parse(response);
+        const books = JSON.parse(response);
         let template = '';
-        tasks.forEach(task => {
+        books.forEach(book => {
           template += `
-            <tr taskId="${task.id}">
-              <td>${task.id}</td>
+            <tr taskId="${book.id}">
+              <td>${book.id}</td>
               <td>
-                <a href="#" class="task-item">${task.name}</a>
+                <a href="#" class="task-item">${book.name}</a>
               </td>
-              <td>${task.description}</td>
+              <td>${book.description}</td>
+              <td>${book.author}</td>
+              <td>${book.published_date}</td>
               <td>
                 <button class="task-delete btn btn-danger">Delete</button>
               </td>
@@ -82,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // Get a Single Task by Id
+  // Get a Single Book by Id
   document.addEventListener('click', function(e) {
     if (e.target.classList.contains('task-item')) {
       e.preventDefault();
@@ -97,10 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => response.text())
       .then(response => {
-        const task = JSON.parse(response);
-        document.getElementById('name').value = task.name;
-        document.getElementById('description').value = task.description;
-        document.getElementById('taskId').value = task.id;
+        const book = JSON.parse(response);
+        document.getElementById('name').value = book.name;
+        document.getElementById('description').value = book.description;
+        document.getElementById('author').value = book.author;
+        document.getElementById('published_date').value = book.published_date;
+        document.getElementById('taskId').value = book.id;
         edit = true;
       });
     }
@@ -119,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.text())
         .then(response => {
           console.log(response);
-          fetchTasks();
+          fetchBooks();
         });
       }
     }

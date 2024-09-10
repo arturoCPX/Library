@@ -1,19 +1,20 @@
 <?php
 
-  include('database.php');
+include('database.php');
 
-if(isset($_POST['name'])) {
-  # echo $_POST['name'] . ', ' . $_POST['description'];
-  $task_name = $_POST['name'];
-  $task_description = $_POST['description'];
-  $query = "INSERT into task(name, description) VALUES ('$task_name', '$task_description')";
+if (isset($_POST['name'])) {
+  $book_name = $_POST['name'];
+  $book_description = $_POST['description'];
+  $book_author = $_POST['author'];
+  $book_published_date = $_POST['published_date'];
+  $query = "INSERT INTO books (name, description, author, published_date) VALUES ('$book_name', '$book_description', '$book_author', '$book_published_date')";
   $result = mysqli_query($connection, $query);
 
   if (!$result) {
-    die('Query Failed.');
+    die('Query Failed: ' . mysqli_error($connection));
   }
 
-  echo "Task Added Successfully";  
+  echo "Book Added Successfully";
 
 }
 
