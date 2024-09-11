@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <td>${book.author}</td>
               <td>${book.published_date}</td>
               <td>
-                <button class="task-delete btn btn-danger">Delete</button>
+                <button class="task-delete btn btn-danger" >Delete</button>
               </td>
             </tr>
           `;

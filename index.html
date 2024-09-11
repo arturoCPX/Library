@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Librería</title>
     <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Librería</a>
+    <a class="navbar-brand" href="#"><img src="logo.png" id="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,7 +22,7 @@
             <li class="nav-item">
                 <form class="d-flex ms-auto">
                     <input name="search" id="search" class="form-control me-2" type="search" placeholder="Search book" aria-label="Search">
-                    <button class="btn btn-success" type="submit">Search</button>
+                    <button class="btn" type="submit"><i class="ri-search-eye-line"></i></button>
                 </form>
             </li>
         </ul>
@@ -45,8 +48,8 @@
                             <input type="date" id="published_date" class="form-control">
                         </div>
                         <input type="hidden" id="taskId">
-                        <button type="submit" class="btn btn-primary w-100">
-                            Save Book
+                        <button type="submit" class="btn w-100">
+                            <i class="ri-save-3-fill"></i> Save Book
                         </button>
                     </form>
                 </div>
@@ -60,7 +63,7 @@
                 </div>
             </div>
 
-            <table class="table table-bordered table-sm">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Id</th>

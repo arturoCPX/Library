@@ -1,0 +1,106 @@
+body {
+    background: #161616;
+}
+#logo {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+}
+.navbar {
+    background-color: #121212 !important;
+}
+.navbar-brand {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.navbar-nav {
+    margin-right: 50px;
+}
+#search {
+    width: 700px;
+    max-width: 100%;
+    background-color: #101010;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    transition: border-color 0.6s ease, color 0.6s ease;
+}
+#search::placeholder {
+    color: white;
+}
+#search:focus {
+    border: 2px solid #fca311;
+    color: #fca311;
+}
+#search:focus::placeholder {
+    color: #fca311;
+}
+button[type="submit"] {
+    background-color: #101010;
+    color: #fca311;
+    border: 2px solid #fca311;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+button[type="submit"]:hover {
+    background-color: #fca311;
+    color: white;
+}
+.card, #task-result {
+    background: #121212 !important;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #fca311;
+    padding: 20px;
+}
+form input, form textarea {
+    background: #2e2e2e !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px;
+    padding: 10px;
+    transition: border-color 0.3 background-color 0.3s ease;
+}
+form input:focus, form textarea:focus {
+    background: #3a3a3a !important;
+    border: 2px solid #fca311 !important;
+}
+form input::placeholder, form textarea::placeholder {
+    color: #b0b0b0 !important;
+}
+div#task-result {
+    background: #2e2e2e !important;
+    border-radius: 10px !important;
+}
+table {
+    background-color: #3a3a3a !important; /* Fondo gris oscuro */
+    color: white; /* Texto blanco */
+    border-collapse: collapse; /* Eliminar los espacios entre las celdas */
+    width: 100%;
+}
+table th, table td {
+   
+    padding: 10px; /* Espaciado interno de las celdas */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+table thead th {
+    background: #3a3a3a !important; /* Fondo más oscuro para los encabezados */
+    color: #fca311; /* Color naranja para los textos de los encabezados */
+}
+table tbody tr:nth-child(even) {
+    background-color: #3a3a3a !important; /* Fila par con fondo ligeramente más claro */
+}
+table tbody tr:nth-child(odd) {
+    background: #2e2e2e !important; /* Fila impar con fondo gris oscuro */
+}
+table tbody tr:hover {
+    background-color: #3a3a3a !important; /* Fondo más claro cuando se hace hover en una fila */
+}
+table tbody td {
+    color: #f0f0f0; /* Texto blanco más claro para el cuerpo */
+    background: #3a3a3a !important; /* Fondo oscuro para las celdas del cuerpo */
+    border-color: #fca311; /* Borde naranja */
+}
