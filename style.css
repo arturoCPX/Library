@@ -104,3 +104,13 @@ table tbody td {
     background: #3a3a3a !important; /* Fondo oscuro para las celdas del cuerpo */
     border-color: #fca311; /* Borde naranja */
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(-20deg);
+    cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(-20deg) brightness(1.2);
+}
+
